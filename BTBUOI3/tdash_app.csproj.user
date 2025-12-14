@@ -8,6 +8,9 @@
     <Compile Update="EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\ThoiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="InvoiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -24,6 +27,15 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="OldForms\Buoi1\UCBC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OldForms\Buoi2\FrmDKSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OldForms\Buoi2\FrmQLSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OldForms\ThoiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ProductForm.cs">

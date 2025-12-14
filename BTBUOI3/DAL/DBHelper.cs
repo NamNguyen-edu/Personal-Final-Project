@@ -18,17 +18,11 @@ namespace TDashMiniStore.DAL
 
         public static SQLiteConnection GetConnection()
         {
-            // Đảm bảo thư mục Database tồn tại
-            string dir = Path.GetDirectoryName(DbFilePath)!;
-            if (!Directory.Exists(dir))
-            {
-                Directory.CreateDirectory(dir);
-            }
-
-            // Tạo DB nếu chưa tồn tại
             if (!File.Exists(DbFilePath))
             {
-                SQLiteConnection.CreateFile(DbFilePath);
+                throw new FileNotFoundException(
+                    "Không tìm thấy file database tdash.db"
+                );
             }
 
             return new SQLiteConnection(ConnectionString);

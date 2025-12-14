@@ -13,11 +13,11 @@ namespace TDashMiniStore
             InitializeComponent();
             SetupTrayIcon();
             slUser.Text = $"Người dùng: {currentUser} ({currentRole})";
-            timer1.Tick += (s,e)=> slTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            timer1.Tick += (s, e) => slTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             timer1.Start();
             this.IsMdiContainer = true;
             this.WindowState = FormWindowState.Maximized;
-            this.MdiChildActivate += (s,e)=> { slForm.Text = this.ActiveMdiChild?.Text ?? "-"; };
+            this.MdiChildActivate += (s, e) => { slForm.Text = this.ActiveMdiChild?.Text ?? "-"; };
             repo = DataRepository.Instance; repo.Seed();
         }
 
@@ -51,8 +51,8 @@ namespace TDashMiniStore
         private void menuEmployee_Click(object sender, EventArgs e) => OpenChild(new EmployeeForm(currentRole));
         private void menuInvoice_Click(object sender, EventArgs e) => OpenChild(new InvoiceForm(currentRole));
         private void menuExit_Click(object sender, EventArgs e) => this.Close();
-        private void menuAbout_Click(object sender, EventArgs e) => MessageBox.Show("tdash - Ứng dụng Quản lý Cửa hàng MINI","Giới thiệu");
-        private void menuContact_Click(object sender, EventArgs e) => MessageBox.Show("tuannm@ueh.edu.vn","Liên hệ");
+        private void menuAbout_Click(object sender, EventArgs e) => MessageBox.Show("tdash - Ứng dụng Quản lý Cửa hàng MINI", "Giới thiệu");
+        private void menuContact_Click(object sender, EventArgs e) => MessageBox.Show("tuannm@ueh.edu.vn", "Liên hệ");
 
         private void OpenChild(Form f)
         {
@@ -85,5 +85,19 @@ namespace TDashMiniStore
 
         private void Notify_Open(object sender, EventArgs e) { this.Show(); this.WindowState = FormWindowState.Normal; }
         private void Notify_Exit(object sender, EventArgs e) { notifyIcon1.Visible = false; Application.Exit(); }
+        private void menuLogin_Click(object sender, EventArgs e)
+        {
+            var f = new LoginForm();
+            f.Show();
+        }
+        private void menuLogout_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void thờiTiếtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

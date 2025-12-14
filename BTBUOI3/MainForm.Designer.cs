@@ -39,88 +39,237 @@ namespace TDashMiniStore
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.menuStrip1 = new MenuStrip();
-            this.toolStrip1 = new ToolStrip();
-            this.statusStrip1 = new StatusStrip();
-            this.slUser = new ToolStripStatusLabel();
-            this.slForm = new ToolStripStatusLabel();
-            this.slTime = new ToolStripStatusLabel();
-            this.timer1 = new System.Windows.Forms.Timer();
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            this.notifyIcon1 = new NotifyIcon(this.components);
-            // Menu items
-            this.hệThốngToolStripMenuItem = new ToolStripMenuItem("Hệ thống");
-            this.menuLogin = new ToolStripMenuItem("Đăng nhập");
-            this.menuLogout = new ToolStripMenuItem("Đăng xuất");
-            this.menuExit = new ToolStripMenuItem("Thoát");
-            this.quảnLýToolStripMenuItem = new ToolStripMenuItem("Quản lý");
-            this.menuEmployee = new ToolStripMenuItem("Nhân viên");
-            this.menuProduct = new ToolStripMenuItem("Sản phẩm");
-            this.menuInvoice = new ToolStripMenuItem("Hóa đơn");
-            this.trợGiúpToolStripMenuItem = new ToolStripMenuItem("Trợ giúp");
-            this.menuAbout = new ToolStripMenuItem("Giới thiệu");
-            this.menuContact = new ToolStripMenuItem("Liên hệ");
-
-            // ToolStrip items
-            this.tsbLogin = new ToolStripButton();
-            this.tsbProducts = new ToolStripButton();
-            this.tsbEmployees = new ToolStripButton();
-            this.txtSearch = new ToolStripTextBox();
-
-            // MenuStrip
-            this.menuStrip1.Items.AddRange(new ToolStripItem[]{ this.hệThốngToolStripMenuItem, this.quảnLýToolStripMenuItem, this.trợGiúpToolStripMenuItem });
-            this.hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[]{ this.menuLogin, this.menuLogout, new ToolStripSeparator(), this.menuExit });
-            this.quảnLýToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[]{ this.menuEmployee, this.menuProduct, this.menuInvoice });
-            this.trợGiúpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[]{ this.menuAbout, this.menuContact });
-
-            // Assign Clicks
-            this.menuLogin.Click += (s,e)=> { var f=new LoginForm(); f.Show(); };
-            this.menuLogout.Click += (s,e)=> Application.Restart();
-            this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
-            this.menuEmployee.Click += new System.EventHandler(this.menuEmployee_Click);
-            this.menuProduct.Click += new System.EventHandler(this.menuProduct_Click);
-            this.menuInvoice.Click += new System.EventHandler(this.menuInvoice_Click);
-            this.menuAbout.Click += new System.EventHandler(this.menuAbout_Click);
-            this.menuContact.Click += new System.EventHandler(this.menuContact_Click);
-
-            // ToolStrip
-            this.tsbLogin.Text = "Login"; this.tsbLogin.Click += new System.EventHandler(this.tsbLogin_Click);
-            this.tsbProducts.Text = "Sản phẩm"; this.tsbProducts.Click += new System.EventHandler(this.tsbProducts_Click);
-            this.tsbEmployees.Text = "Nhân viên"; this.tsbEmployees.Click += new System.EventHandler(this.tsbEmployees_Click);
-            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
-
-            this.toolStrip1.Items.AddRange(new ToolStripItem[]{ this.tsbLogin, this.tsbProducts, this.tsbEmployees, new ToolStripSeparator(), new ToolStripLabel("Tìm:"), this.txtSearch });
-
-            // StatusStrip
-            this.statusStrip1.Items.AddRange(new ToolStripItem[]{ this.slUser, new ToolStripSeparator(), this.slForm, new ToolStripStatusLabel(){Spring=true}, this.slTime });
-
-            // NotifyIcon
-            this.notifyIcon1.Text = "tdash";
-            this.notifyIcon1.Icon = SystemIcons.Application;
-            this.notifyIcon1.DoubleClick += notifyIcon1_DoubleClick;
-            var ctx = new ContextMenuStrip();
-            ctx.Items.Add("Mở", null, new System.EventHandler(this.Notify_Open));
-            ctx.Items.Add("Thoát", null, new System.EventHandler(this.Notify_Exit));
-            this.notifyIcon1.ContextMenuStrip = ctx;
-
-            // Form
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.statusStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.menuStrip1.Dock = DockStyle.Top;
-            this.toolStrip1.Dock = DockStyle.Top;
-            this.statusStrip1.Dock = DockStyle.Bottom;
-            this.Text = "tdash - Quản lý cửa hàng MINI";
-            this.Resize += MainForm_Resize;
-            this.ClientSize = new System.Drawing.Size(1000, 700);
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            menuStrip1 = new MenuStrip();
+            hệThốngToolStripMenuItem = new ToolStripMenuItem();
+            menuLogin = new ToolStripMenuItem();
+            menuLogout = new ToolStripMenuItem();
+            menuExit = new ToolStripMenuItem();
+            quảnLýToolStripMenuItem = new ToolStripMenuItem();
+            menuEmployee = new ToolStripMenuItem();
+            menuProduct = new ToolStripMenuItem();
+            menuInvoice = new ToolStripMenuItem();
+            trợGiúpToolStripMenuItem = new ToolStripMenuItem();
+            menuAbout = new ToolStripMenuItem();
+            menuContact = new ToolStripMenuItem();
+            toolStrip1 = new ToolStrip();
+            tsbLogin = new ToolStripButton();
+            tsbProducts = new ToolStripButton();
+            tsbEmployees = new ToolStripButton();
+            txtSearch = new ToolStripTextBox();
+            statusStrip1 = new StatusStrip();
+            slUser = new ToolStripStatusLabel();
+            slForm = new ToolStripStatusLabel();
+            slTime = new ToolStripStatusLabel();
+            timer1 = new System.Windows.Forms.Timer(components);
+            notifyIcon1 = new NotifyIcon(components);
+            ctx = new ContextMenuStrip(components);
+            thờiTiếtToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
+            toolStrip1.SuspendLayout();
+            statusStrip1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem, quảnLýToolStripMenuItem, trợGiúpToolStripMenuItem, thờiTiếtToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1000, 28);
+            menuStrip1.TabIndex = 2;
+            // 
+            // hệThốngToolStripMenuItem
+            // 
+            hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuLogin, menuLogout, menuExit });
+            hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
+            hệThốngToolStripMenuItem.Size = new Size(85, 24);
+            hệThốngToolStripMenuItem.Text = "Hệ thống";
+            // 
+            // menuLogin
+            // 
+            menuLogin.Name = "menuLogin";
+            menuLogin.Size = new Size(224, 26);
+            menuLogin.Text = "Đăng nhập";
+            menuLogin.Click += menuLogin_Click;
+            // 
+            // menuLogout
+            // 
+            menuLogout.Name = "menuLogout";
+            menuLogout.Size = new Size(224, 26);
+            menuLogout.Text = "Đăng xuất";
+            menuLogout.Click += menuLogout_Click;
+            // 
+            // menuExit
+            // 
+            menuExit.Name = "menuExit";
+            menuExit.Size = new Size(224, 26);
+            menuExit.Text = "Thoát";
+            menuExit.Click += menuExit_Click;
+            // 
+            // quảnLýToolStripMenuItem
+            // 
+            quảnLýToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuEmployee, menuProduct, menuInvoice });
+            quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
+            quảnLýToolStripMenuItem.Size = new Size(73, 24);
+            quảnLýToolStripMenuItem.Text = "Quản lý";
+            // 
+            // menuEmployee
+            // 
+            menuEmployee.Name = "menuEmployee";
+            menuEmployee.Size = new Size(224, 26);
+            menuEmployee.Text = "Nhân viên";
+            menuEmployee.Click += menuEmployee_Click;
+            // 
+            // menuProduct
+            // 
+            menuProduct.Name = "menuProduct";
+            menuProduct.Size = new Size(224, 26);
+            menuProduct.Text = "Sản phẩm";
+            menuProduct.Click += menuProduct_Click;
+            // 
+            // menuInvoice
+            // 
+            menuInvoice.Name = "menuInvoice";
+            menuInvoice.Size = new Size(224, 26);
+            menuInvoice.Text = "Hóa đơn";
+            menuInvoice.Click += menuInvoice_Click;
+            // 
+            // trợGiúpToolStripMenuItem
+            // 
+            trợGiúpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuAbout, menuContact });
+            trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
+            trợGiúpToolStripMenuItem.Size = new Size(78, 24);
+            trợGiúpToolStripMenuItem.Text = "Trợ giúp";
+            // 
+            // menuAbout
+            // 
+            menuAbout.Name = "menuAbout";
+            menuAbout.Size = new Size(224, 26);
+            menuAbout.Text = "Giới thiệu";
+            menuAbout.Click += menuAbout_Click;
+            // 
+            // menuContact
+            // 
+            menuContact.Name = "menuContact";
+            menuContact.Size = new Size(224, 26);
+            menuContact.Text = "Liên hệ";
+            menuContact.Click += menuContact_Click;
+            // 
+            // toolStrip1
+            // 
+            toolStrip1.ImageScalingSize = new Size(20, 20);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbLogin, tsbProducts, tsbEmployees, txtSearch });
+            toolStrip1.Location = new Point(0, 28);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(1000, 27);
+            toolStrip1.TabIndex = 1;
+            // 
+            // tsbLogin
+            // 
+            tsbLogin.Name = "tsbLogin";
+            tsbLogin.Size = new Size(50, 24);
+            tsbLogin.Text = "Login";
+            tsbLogin.Click += tsbLogin_Click;
+            // 
+            // tsbProducts
+            // 
+            tsbProducts.Name = "tsbProducts";
+            tsbProducts.Size = new Size(79, 24);
+            tsbProducts.Text = "Sản phẩm";
+            tsbProducts.Click += tsbProducts_Click;
+            // 
+            // tsbEmployees
+            // 
+            tsbEmployees.Name = "tsbEmployees";
+            tsbEmployees.Size = new Size(79, 24);
+            tsbEmployees.Text = "Nhân viên";
+            tsbEmployees.Click += tsbEmployees_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(100, 27);
+            txtSearch.KeyDown += txtSearch_KeyDown;
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { slUser, slForm, slTime });
+            statusStrip1.Location = new Point(0, 678);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(1000, 22);
+            statusStrip1.TabIndex = 3;
+            // 
+            // slUser
+            // 
+            slUser.Name = "slUser";
+            slUser.Size = new Size(0, 16);
+            // 
+            // slForm
+            // 
+            slForm.Name = "slForm";
+            slForm.Size = new Size(0, 16);
+            // 
+            // slTime
+            // 
+            slTime.Name = "slTime";
+            slTime.Size = new Size(0, 16);
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
+            // notifyIcon1
+            // 
+            notifyIcon1.ContextMenuStrip = ctx;
+            notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
+            notifyIcon1.Text = "tdash";
+            notifyIcon1.DoubleClick += notifyIcon1_DoubleClick;
+            // 
+            // ctx
+            // 
+            ctx.ImageScalingSize = new Size(20, 20);
+            ctx.Name = "ctx";
+            ctx.Size = new Size(61, 4);
+            // 
+            // thờiTiếtToolStripMenuItem
+            // 
+            thờiTiếtToolStripMenuItem.Name = "thờiTiếtToolStripMenuItem";
+            thờiTiếtToolStripMenuItem.Size = new Size(78, 24);
+            thờiTiếtToolStripMenuItem.Text = "Thời tiết";
+            thờiTiếtToolStripMenuItem.Click += thờiTiếtToolStripMenuItem_Click;
+            // 
+            // MainForm
+            // 
+            BackgroundImage = tdash_app.Properties.Resources.Logo;
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(1000, 700);
+            Controls.Add(toolStrip1);
+            Controls.Add(menuStrip1);
+            Controls.Add(statusStrip1);
+            MainMenuStrip = menuStrip1;
+            Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "tdash - Quản lý cửa hàng MINI";
+            Resize += MainForm_Resize;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
             // Cập nhật thời gian lên tiêu đề Form mỗi giây
             this.Text = "TDASH Mini Store - " + DateTime.Now.ToString("HH:mm:ss");
         }
+        private ContextMenuStrip ctx;
+        private ToolStripMenuItem thờiTiếtToolStripMenuItem;
     }
 }
