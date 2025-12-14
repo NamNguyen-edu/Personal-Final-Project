@@ -1,0 +1,14 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+
+# SQLite
+*.db
+!Database/tdash.db
+*.db-shm
+*.db-wal
+
+# User-specific files
+*.user
+*.suo

@@ -17,6 +17,15 @@
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="OldForms\Buoi1\CheckHienThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OldForms\Buoi1\MayTinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OldForms\Buoi1\UCBC.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ProductForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tdash_app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+862c71e863f78f59911150cd28f153770ec76505")]
 [assembly: System.Reflection.AssemblyProductAttribute("tdash_app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tdash_app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\LESSONS\\DesktopDev\\OED\\BTBUOI3\\tdash_app.csproj": {}
+    "D:\\LESSONS\\DesktopDev\\PFP\\BTBUOI3\\tdash_app.csproj": {}
   },
   "projects": {
-    "D:\\LESSONS\\DesktopDev\\OED\\BTBUOI3\\tdash_app.csproj": {
+    "D:\\LESSONS\\DesktopDev\\PFP\\BTBUOI3\\tdash_app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LESSONS\\DesktopDev\\OED\\BTBUOI3\\tdash_app.csproj",
+        "projectUniqueName": "D:\\LESSONS\\DesktopDev\\PFP\\BTBUOI3\\tdash_app.csproj",
         "projectName": "tdash_app",
-        "projectPath": "D:\\LESSONS\\DesktopDev\\OED\\BTBUOI3\\tdash_app.csproj",
+        "projectPath": "D:\\LESSONS\\DesktopDev\\PFP\\BTBUOI3\\tdash_app.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\LESSONS\\DesktopDev\\OED\\BTBUOI3\\obj\\",
+        "outputPath": "D:\\LESSONS\\DesktopDev\\PFP\\BTBUOI3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\CODE\\STO\\NuGetPackages"
@@ -49,6 +49,20 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Data.Sqlite.Core": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "SQLitePCLRaw.bundle_e_sqlite3": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
+            "System.Data.SQLite.EF6": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
