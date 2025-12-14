@@ -1,0 +1,16 @@
+D:\LESSONS\DesktopDev\test\tdash_mini_store\bin\Debug\net8.0-windows\tdash.exe
+D:\LESSONS\DesktopDev\test\tdash_mini_store\bin\Debug\net8.0-windows\tdash.deps.json
+D:\LESSONS\DesktopDev\test\tdash_mini_store\bin\Debug\net8.0-windows\tdash.runtimeconfig.json
+D:\LESSONS\DesktopDev\test\tdash_mini_store\bin\Debug\net8.0-windows\tdash.dll
+D:\LESSONS\DesktopDev\test\tdash_mini_store\bin\Debug\net8.0-windows\tdash.pdb
+D:\LESSONS\DesktopDev\test\tdash_mini_store\obj\Debug\net8.0-windows\TDashMiniStore.EmployeeEditForm.resources
+D:\LESSONS\DesktopDev\test\tdash_mini_store\obj\Debug\net8.0-windows\tdash.csproj.GenerateResource.cache
+D:\LESSONS\DesktopDev\test\tdash_mini_store\obj\Debug\net8.0-windows\tdash.GeneratedMSBuildEditorConfig.editorconfig
+D:\LESSONS\DesktopDev\test\tdash_mini_store\obj\Debug\net8.0-windows\tdash.AssemblyInfoInputs.cache
+D:\LESSONS\DesktopDev\test\tdash_mini_store\obj\Debug\net8.0-windows\tdash.AssemblyInfo.cs
+D:\LESSONS\DesktopDev\test\tdash_mini_store\obj\Debug\net8.0-windows\tdash.csproj.CoreCompileInputs.cache
+D:\LESSONS\DesktopDev\test\tdash_mini_store\obj\Debug\net8.0-windows\tdash.dll
+D:\LESSONS\DesktopDev\test\tdash_mini_store\obj\Debug\net8.0-windows\refint\tdash.dll
+D:\LESSONS\DesktopDev\test\tdash_mini_store\obj\Debug\net8.0-windows\tdash.pdb
+D:\LESSONS\DesktopDev\test\tdash_mini_store\obj\Debug\net8.0-windows\tdash.genruntimeconfig.cache
+D:\LESSONS\DesktopDev\test\tdash_mini_store\obj\Debug\net8.0-windows\ref\tdash.dll
